@@ -11,7 +11,7 @@ import schema from './src/grapqhql';
 
 const JsonParser = bodyParser.json();
 const app = express();
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 1617
 
 mongoose.connect('mongodb://gabo:gabo2018@ds111492.mlab.com:11492/clone-netflix2018');
 
