@@ -18,7 +18,7 @@ mongoose.connect('mongodb://gabo:gabo2018@ds111492.mlab.com:11492/clone-netflix2
 const db = mongoose.connection;
 
 db.on('error',() => console.log('Failed to connect to mongoDB'))
-    .once('open',()=> console.log('Connected to MongoDB', port));
+    .once('open',()=> console.log('Connected to MongoDB', PORT));
 
     app.listen(PORT,() =>{
         console.log("Magic Happens in port: "+PORT)
