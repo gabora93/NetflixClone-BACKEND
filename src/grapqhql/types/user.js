@@ -33,7 +33,7 @@ export const UserType = new grapqhl.GraphQLObjectType({
 });
 
 export const UserInputType = new grapqhl.GraphQLInputObjectType({
-    name: 'Add Users',
+    name: 'Add_Users',
     description : 'Types of add Users',
     fields : () => ({
         name : {
