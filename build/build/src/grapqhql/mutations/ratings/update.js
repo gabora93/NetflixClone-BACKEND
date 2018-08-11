@@ -8,16 +8,16 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _graphql = require('graphql');
 
-var _rating = require('../../types/rating');
+var _ratings = require('../../types/ratings');
 
-var _ratings = require('../../../schemas/ratings');
+var _ratings2 = require('../../../schemas/ratings');
 
-var _ratings2 = _interopRequireDefault(_ratings);
+var _ratings3 = _interopRequireDefault(_ratings2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-    type: _rating.RatingType,
+    type: _ratings.RatingType,
     args: {
         id: {
             name: 'ID',
@@ -25,12 +25,12 @@ exports.default = {
         },
         data: {
             name: 'data',
-            type: new _graphql.GraphQLNonNull(_rating.RatingInputType)
+            type: new _graphql.GraphQLNonNull(_ratings.RatingInputType)
         }
     },
     resolve: function resolve(root, params) {
-        return _ratings2.default.findByIdAndUpdate(params.id, { $set: _extends({}, params.data) }).then(function (data) {
-            return _ratings2.default.findById(data.id).exec();
+        return _ratings3.default.findByIdAndUpdate(params.id, { $set: _extends({}, params.data) }).then(function (data) {
+            return _ratings3.default.findById(data.id).exec();
         }).catch(function (err) {
             return new Error('Couldnt upddate rating data', err);
         });

@@ -51,7 +51,7 @@ var db = _mongoose2.default.connection;
 db.on('error', function () {
     return console.log('Failed to connect to mongoDB');
 }).once('open', function () {
-    return console.log('Connected to MongoDB', port);
+    return console.log('Connected to MongoDB', PORT);
 });
 
 app.listen(PORT, function () {

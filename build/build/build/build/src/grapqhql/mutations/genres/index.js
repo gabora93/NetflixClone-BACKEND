@@ -16,10 +16,12 @@ var _delete = require('./delete');
 
 var _delete2 = _interopRequireDefault(_delete);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : { default: obj };
+}
 
 exports.default = {
-    addMovie: _add2.default,
-    updateMovie: _update2.default,
-    deleteMovie: _delete2.default
+    addGenre: _add2.default,
+    updateGenre: _update2.default,
+    deleteGenre: _delete2.default
 };
