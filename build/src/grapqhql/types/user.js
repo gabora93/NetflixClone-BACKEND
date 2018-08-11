@@ -46,7 +46,7 @@ var UserType = exports.UserType = new grapqhl.GraphQLObjectType({
 });
 
 var UserInputType = exports.UserInputType = new grapqhl.GraphQLInputObjectType({
-    name: 'Add_Users',
+    name: 'AddUsers',
     description: 'Types of add Users',
     fields: function fields() {
         return {
