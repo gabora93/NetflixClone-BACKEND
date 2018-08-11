@@ -36,11 +36,13 @@ var _grapqhql = require('./src/grapqhql');
 
 var _grapqhql2 = _interopRequireDefault(_grapqhql);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : { default: obj };
+}
 
 var JsonParser = _bodyParser2.default.json();
 var app = (0, _express2.default)();
-var PORT = process.env.PORT || 3000;
+var port = process.env.Port || 8888;
 
 _mongoose2.default.connect('mongodb://gabo:gabo2018@ds111492.mlab.com:11492/clone-netflix2018');
 
@@ -52,8 +54,8 @@ db.on('error', function () {
     return console.log('Connected to MongoDB', port);
 });
 
-app.listen(PORT, function () {
-    console.log("Magic Happens in port: " + PORT);
+app.listen(port, function () {
+    console.log('Server Works on port ' + port);
 });
 
 app.use((0, _cors2.default)());
