@@ -9,7 +9,17 @@ var _graphql = require("graphql");
 
 var grapqhl = _interopRequireWildcard(_graphql);
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) {
+    if (obj && obj.__esModule) {
+        return obj;
+    } else {
+        var newObj = {};if (obj != null) {
+            for (var key in obj) {
+                if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];
+            }
+        }newObj.default = obj;return newObj;
+    }
+}
 
 var UserType = exports.UserType = new grapqhl.GraphQLObjectType({
     name: "Users",
@@ -46,7 +56,7 @@ var UserType = exports.UserType = new grapqhl.GraphQLObjectType({
 });
 
 var UserInputType = exports.UserInputType = new grapqhl.GraphQLInputObjectType({
-    name: 'Add_Users',
+    name: 'Add Users',
     description: 'Types of add Users',
     fields: function fields() {
         return {
