@@ -27,7 +27,7 @@ import Rating from '../../schemas/ratings';
             type: graphql.GraphQLInt
          },
          rank: {
-            type: graphql.GraphQLInt
+            type: graphql.GraphQLList(graphql.GraphQLFloat)
          },
          duration: {
             type: graphql.GraphQLString
@@ -79,9 +79,6 @@ import Rating from '../../schemas/ratings';
         year : {
            type: graphql.GraphQLInt
         },
-        rank: {
-           type: graphql.GraphQLInt
-        },
         duration: {
            type: graphql.GraphQLString
         },
@@ -100,5 +97,15 @@ import Rating from '../../schemas/ratings';
         url : {
             type: graphql.GraphQLString
         }
+     })
+ })
+
+ export const RankMovieType = new graphql.GraphQLInputObjectType({
+     name: "addRank",
+     description: "Add Rank to Movie",
+     fields:()=>({
+         rank:{
+             type:graphql.GraphQLFloat
+         }
      })
  })
