@@ -122,19 +122,19 @@ app.use('/verifyToken', JsonParser, (req,res)=> {
     }
 })
 
-//             MIDDLEWARE
-// app.use('/graphql', (req,res,next) =>{
+            MIDDLEWARE
+app.use('/graphql', (req,res,next) =>{
 
-//     const token = req.headers['authorization']
-//     try{
-//         req.user = verifyToken(token)
-//         next()
-//     } catch(er){
-//         res.status(401).json({
-//             message: er.message
-//         })
-//     }
-// })
+    const token = req.headers['authorization']
+    try{
+        req.user = verifyToken(token)
+        next()
+    } catch(er){
+        res.status(401).json({
+            message: er.message
+        })
+    }
+})
 
 app.use('/graphql', graphQLHTTP((req,res)=>({
     schema,
