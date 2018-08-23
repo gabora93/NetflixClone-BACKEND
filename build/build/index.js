@@ -36,7 +36,9 @@ var _grapqhql = require('./src/grapqhql');
 
 var _grapqhql2 = _interopRequireDefault(_grapqhql);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : { default: obj };
+}
 
 var JsonParser = _bodyParser2.default.json();
 var app = (0, _express2.default)();
@@ -151,18 +153,18 @@ app.use('/verifyToken', JsonParser, function (req, res) {
 });
 
 //             MIDDLEWARE
-// app.use('/graphql', (req,res,next) =>{
+app.use('/graphql', function (req, res, next) {
 
-//     const token = req.headers['authorization']
-//     try{
-//         req.user = verifyToken(token)
-//         next()
-//     } catch(er){
-//         res.status(401).json({
-//             message: er.message
-//         })
-//     }
-// })
+    var token = req.headers['authorization'];
+    try {
+        req.user = (0, _verify.verifyToken)(token);
+        next();
+    } catch (er) {
+        res.status(401).json({
+            message: er.message
+        });
+    }
+});
 
 app.use('/graphql', (0, _expressGraphql2.default)(function (req, res) {
     return {
